@@ -1,12 +1,19 @@
 import { gql } from '@apollo/client'
 
 export const GET_SINGLE_USER = gql`
-    query getSingleUser($username: String!) {
-        getSingleUser(username: $username) {
+    query getSingleUser {
+      getSingleUser{
         _id
         username
         email
-        password
-        }
+        savedBooks {
+          bookId
+          authors
+          description
+          image
+          link
+          title
+      }
+    }
   }
 `
